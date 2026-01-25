@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const addTask = (text, completed = false, checkCompletion = true) => {
         const taskText = text || taskInput.value.trim();
         if (!taskText) {
+            taskInput.placeholder = 'Please enter a task!!!';
             return;
         }
         //create list item for the task
@@ -114,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleEmptyState();
         updateProgress(checkCompletion);
         saveTaskToLocalStorage();
+        taskInput.placeholder = 'Enter a new task';
 
     };
 
